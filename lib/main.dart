@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:api_project/product_description.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -230,7 +231,18 @@ class _HomePageState extends State<HomePage> {
                       final product = filteredProducts?[index];
                       final addedToCart = product['addedToCart'] as bool?;
                       return GestureDetector(
-
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProductDescriptionPage(
+                                product: product,
+                                addToCart: addToCart,
+                                removeFromCart: removeFromCart,
+                              ),
+                            ),
+                          );
+                        },
                         child: Container(
                           width: 120,
                           height: 240,
