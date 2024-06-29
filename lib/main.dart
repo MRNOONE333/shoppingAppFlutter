@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:api_project/product_description.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'cart_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => HomePage(),
+        '/cart': (context) => CartPage(),
       },
     );
   }
